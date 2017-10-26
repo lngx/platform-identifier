@@ -1,6 +1,6 @@
 {
   "name": "ngx-platform-identifier",
-  "version": "0.0.0",
+  "version": "0.1.4",
   "description": "Angular 4+ library to get information about the running platform (browser, OS and other).",
   "scripts": {
     "ng": "ng",
@@ -8,8 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "pack": "rimraf ./build && mkdir build && tsc -p ./src/app/ngx-platform-identifier"
   },
+  "main": "./build/platform-identifier.module.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luanmm/ngx-platform-identifier.git"
@@ -25,7 +27,6 @@
   ],
   "author": "Luan Mattner Müller",
   "license": "MIT",
-  "typings": "src/index.d.ts",
   "peerDependencies": {
     "@angular/core": "^4.0.0",
     "core-js": "^2.4.0",
@@ -57,10 +58,15 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "rimraf": "^2.6.2",
     "rxjs": "^5.1.0",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
     "typescript": "~2.3.3",
     "zone.js": "^0.8.4"
-  }
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
 }

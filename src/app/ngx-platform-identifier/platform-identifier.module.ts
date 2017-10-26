@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { NAVIGATOR_UA } from './constants';
+import { NAVIGATOR_UA } from './config';
 import { Platform } from './platform.service';
 
 @NgModule({

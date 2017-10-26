@@ -1,7 +1,7 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 
-import { NAVIGATOR_UA } from './constants';
-import { Browser } from './browser.constants';
+import { NAVIGATOR_UA } from './config';
+import { Browser } from './constants';
 import { Platform } from './platform.service';
 
 describe('Platform', () => {

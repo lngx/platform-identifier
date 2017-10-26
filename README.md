@@ -1,7 +1,3 @@
-# ngx-platform-identifier
-
-Angular 4+ library to identify the running platform (browser, OS and other details).
-
 ## Use
 
 ___`This library is still under development and is not ready to be used in production.`___

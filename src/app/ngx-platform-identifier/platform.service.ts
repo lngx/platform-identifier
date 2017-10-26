@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 
-import { NAVIGATOR_UA, Browser } from './constants';
+import { NAVIGATOR_UA } from './config';
+import { Browser } from './constants';
 
 @Injectable()
 export class Platform {

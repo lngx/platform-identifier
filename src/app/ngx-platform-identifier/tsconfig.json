@@ -1,0 +1,14 @@
+{
+    "extends": "../../../tsconfig.json",
+    "compilerOptions": {
+      "declaration": true,
+      "module": "es6",
+      "sourceMap": false,
+      "moduleResolution": "node",
+      "outDir": "../../../build"
+    },
+    "angularCompilerOptions": {
+      "skipMetadataEmit": false,
+      "skipTemplateCodegen": true
+    }
+  }
