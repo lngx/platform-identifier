@@ -14,6 +14,19 @@ To install this library into your Angular project, just run the following comman
 npm install ngx-platform-identifier --save
 ```
 
+...and don't forget to import the library module into your Angular application module:
+
+```typescript
+import { PlatformIdentifierModule } from 'ngx-platform-identifier';
+
+@NgModule({
+  imports: [
+    PlatformIdentifierModule
+  ]
+})
+export class SampleModule { }
+```
+
 ### Getting platform information
 
 The library provides two simple methods to check the platform, as the example shows:
@@ -21,7 +34,7 @@ The library provides two simple methods to check the platform, as the example sh
 ```typescript
 import { Platform, Browser } from 'ngx-platform-identifier';
 
-class Sample {
+class SampleComponent {
 
     constructor(
         private platform: Platform
