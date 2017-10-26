@@ -1,6 +1,6 @@
 {
   "name": "ngx-platform-identifier",
-  "version": "0.1.11",
+  "version": "0.1.15",
   "description": "Angular 4+ library to get information about the running platform (browser, OS and other).",
   "scripts": {
     "ng": "ng",
@@ -12,6 +12,7 @@
     "prepublish": "rimraf ./build && mkdir build && tsc -p ./src/app/ngx-platform-identifier"
   },
   "main": "./build/index.js",
+  "typings": "./ngx-platform-identifier.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luanmm/ngx-platform-identifier.git"
