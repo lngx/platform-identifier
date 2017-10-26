@@ -1,9 +1,13 @@
+e2e
+node_modules
 src
 dist
+.angular-cli.json
 .editorconfig
-.vscode
+.gitignore
+.npmignore
+.travis.yml
 karma.conf.js
 protractor.conf.js
+tsconfig.json
 tslint.json
-.idea
-.angular-cli.json
