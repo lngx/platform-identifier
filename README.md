@@ -1,6 +1,6 @@
 ## Use
 
-___`This library is still under development and is not ready to be used in production.`___
+___`This library is still under development and its use is not recommended yet.`___
 
 ### Installing
 
