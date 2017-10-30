@@ -1,6 +1,10 @@
-## Use
+![Build status](https://travis-ci.org/luanmm/ngx-platform-identifier.svg?branch=master)
 
-___`This library is still under development and its use is not recommended yet.`___
+## Warning
+
+___This library is still under development and its use is not recommended yet.___
+
+## Use
 
 ### Installing
 
