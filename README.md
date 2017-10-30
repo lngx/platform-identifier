@@ -16,9 +16,9 @@ npm install ngx-platform-identifier --save
 import { PlatformIdentifierModule } from 'ngx-platform-identifier';
 
 @NgModule({
-  imports: [
-    PlatformIdentifierModule
-  ]
+    imports: [
+        PlatformIdentifierModule
+    ]
 })
 export class SampleModule { }
 ```
@@ -30,7 +30,7 @@ The library provides two simple methods to check the platform, as the example sh
 ```typescript
 import { Platform, Browser } from 'ngx-platform-identifier';
 
-class SampleComponent {
+export class SampleComponent {
 
     constructor(
         private platform: Platform
