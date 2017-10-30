@@ -1,8 +1,6 @@
 ![Build status](https://travis-ci.org/luanmm/ngx-platform-identifier.svg?branch=master)
 
-## Warning
-
-___This library is still under development and its use is not recommended yet.___
+## ___This library is still under development and its use is not recommended yet.___
 
 ## Use
 
@@ -46,8 +44,8 @@ export class SampleComponent {
             // ...
         }
 
-        // Checks if the user is using any Chrome-based browser (like Opera)
-        if (this.platform.isBasedOn(Browser.CHROME)) {
+        // Checks if the user is using any Chrome-compatible browser (like Opera, that uses the same engine)
+        if (this.platform.isCompatibleWith(Browser.CHROME)) {
             // ...
         }
     }
