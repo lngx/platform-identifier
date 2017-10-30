@@ -166,9 +166,9 @@ describe('Platform', () => {
                 expect(service.is(Browser.CHROME)).toBeDefined();
             })));
 
-        it('test should return a value for Platform.isBasedOn',
+        it('test should return a value for Platform.isCompatibleWith',
             async(inject([Platform], (service: Platform) => {
-                expect(service.isBasedOn(Browser.CHROME)).toBeDefined();
+                expect(service.isCompatibleWith(Browser.CHROME)).toBeDefined();
             })));
 
         it('test should return a value for Platform.versionOf',
