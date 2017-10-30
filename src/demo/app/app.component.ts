@@ -7,7 +7,7 @@ import { Platform, Browser } from 'ngx-platform-identifier';
 })
 export class AppComponent {
 
-  isChromePlatform: boolean = false;
+  isChromePlatform = false;
 
   constructor(platform: Platform) {
     this.isChromePlatform = platform.is(Browser.CHROME);

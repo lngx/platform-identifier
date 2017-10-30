@@ -13,6 +13,7 @@ describe('Platform', () => {
         });
     };
 
+    /* tslint:disable:max-line-length */
     let chromeUserAgents = [
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
         'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36',
@@ -153,6 +154,7 @@ describe('Platform', () => {
         edgeUserAgents.forEach(ua => testIsFn(Browser.SAFARI, ua, false));
         operaUserAgents.forEach(ua => testIsFn(Browser.SAFARI, ua, false));
     });
+    /* tslint:enable:max-line-length */
 
     describe('With the TestBed (for Angular integration)', () => {
         beforeEach(async(() => {

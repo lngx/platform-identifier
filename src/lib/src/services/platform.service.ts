@@ -13,7 +13,7 @@ export class Platform {
     is(identifier: RegExp): boolean {
         let collection = this.getSourceCollection(identifier);
 
-        for (let c in collection) {
+        for (let c of Object.keys(collection)) {
             let regex = collection[c] as RegExp;
 
             if (regex.test(this.ua)) {
