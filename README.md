@@ -54,12 +54,14 @@ export class SampleComponent {
 
 ### False positives
 
-Libraries like this one deeply depend on the [User-Agent](https://en.wikipedia.org/wiki/User_agent) content to get the data. There's nothing to do when the user "hacks" this information in its browser - when using a plugin that changes it in order to emulate another platform, for instance.
+Libraries like this one deeply depend on the _[user agent](https://en.wikipedia.org/wiki/User_agent)_ content to get the data. There's nothing to do when the user "hacks" this information in its browser - when using a plugin that changes it in order to emulate another platform, for instance.
 
-# Issues
+Although, if you are sure that the library is returning an weird result and apparently there is no hack to mask the browser's _user agent_ information, please feel free to [file an issue](issues/) in this repository with all the available information of your scenario, so we can check if it is a bug (no one is perfect!).
+
+## Issues
 
 If you want to contribute reporting issues that you have found when using the library, it will be appreciated.
 
-# License
+## License
 
 This library and its code is licensed under the [MIT License](LICENSE).
