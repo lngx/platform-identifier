@@ -52,6 +52,30 @@ export class SampleComponent {
 }
 ```
 
+### Available checks
+
+You may check information of the running browser, engine and OS. All the information checks and platform discovery works out-of-the-box:
+
+```typescript
+// Checking if is running on an Android operating system
+if (this.platform.is(OS.ANDROID)) {
+    // ...
+}
+
+// Checking compatibility with WebKit engine
+if (this.platform.isCompatibleWith(Engine.WEBKIT)) {
+    // ...
+}
+
+// Printing information about the running platform
+console.log('Running in the ', this.platform.engine.name, ' engine, version ', this.platform.engine.version);
+
+// Or just using the "toString()" helper
+console.log('Engine: ', this.platform.engine.toString());
+console.log('Browser: ', this.platform.browser.toString());
+console.log('OS: ', this.platform.os.toString());
+```
+
 ### False positives
 
 Libraries like this one deeply depend on the _[user agent](https://en.wikipedia.org/wiki/User_agent)_ content to get the data. There's nothing to do when the user "hacks" this information in its browser - when using a plugin that changes it in order to emulate another platform, for instance.

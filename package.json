@@ -1,7 +1,7 @@
 {
   "name": "ngx-platform-identifier",
-  "version": "0.2.0",
-  "description": "Angular 4+ library to get information about the running platform (browser, OS and other).",
+  "version": "0.8.3",
+  "description": "Angular 4+ library to get information about the running platform (engine, browser and OS, currently).",
   "author": "Luan Mattner Müller",
   "license": "MIT",
   "repository": {
@@ -10,11 +10,14 @@
   },
   "keywords": [
     "angular2",
+    "angular4",
     "typescript",
     "user agent",
     "information",
     "os",
     "browser",
+    "engine",
+    "device",
     "platform"
   ],
   "main": "./bundles/ngx-platform-identifier.umd.js",

@@ -4,7 +4,7 @@
   "description": "App for integration tests",
   "private": true,
   "scripts": {
-    "clean": "rimraf aot/ dist/ node_modules/quickstart-lib/",
+    "clean": "rimraf aot/ dist/ node_modules/ngx-platform-identifier/",
     "build": "tsc -p src/",
     "build:watch": "tsc -p src/ -w",
     "build:e2e": "tsc -p e2e/",

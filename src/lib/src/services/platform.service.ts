@@ -7,53 +7,85 @@ import { Device } from '../constants/device';
 import { Engine } from '../constants/engine';
 import { OS } from '../constants/os';
 
+import { PlatformInfo } from '../common/platform-info';
+import { Identifier } from '../interfaces/identifier';
+import { Collection } from '../interfaces/collection';
+
 @Injectable()
 export class Platform {
+
+    get browser(): PlatformInfo {
+        if (this._browser === null)
+            this._browser = PlatformInfo.from(Browser, this.ua);
+
+        return this._browser;
+    }
+
+    private _browser: PlatformInfo = null;
+
+    /* TODO: Make the devices list by user-agent first
+    get device(): PlatformInfo {
+        if (this._device === null)
+            this._device = PlatformInfo.from(Device, this.ua);
+
+        return this._device;
+    }
+
+    private _device: PlatformInfo = null;
+    */
+
+    get engine(): PlatformInfo {
+        if (this._engine === null)
+            this._engine = PlatformInfo.from(Engine, this.ua);
+
+        return this._engine;
+    }
+
+    private _engine: PlatformInfo = null;
+
+    get os(): PlatformInfo {
+        if (this._os === null)
+            this._os = PlatformInfo.from(OS, this.ua);
+
+        return this._os;
+    }
+
+    private _os: PlatformInfo = null;
 
     constructor(
         @Inject(NAVIGATOR_UA) private ua = window.navigator.userAgent
     ) { }
 
-    is(identifier: RegExp): boolean {
+    is(identifier: Identifier): boolean {
         let collection = this.getSourceCollection(identifier);
         this.assertValidCollection(collection);
 
-        if (collection === Browser) {
-            return this.checkByHierarchy(collection, identifier);
-        }
-
-        if (collection === Device) {
-            // TODO
-        }
-
-        if (collection === Engine) {
-            // TODO
-        }
-
-        if (collection === OS) {
-            // TODO
-        }
-
-        return false;
+        return this.checkByHierarchy(collection, identifier);
     }
 
-    isCompatibleWith(identifier: RegExp): boolean {
+    isCompatibleWith(identifier: Identifier): boolean {
         let collection = this.getSourceCollection(identifier);
         this.assertValidCollection(collection);
 
-        return identifier.test(this.ua);
+        return identifier.matchingExpression.test(this.ua);
     }
 
-    versionOf(identifier: RegExp): string {
-        let match = identifier.exec(this.ua);
-        return match[match.length - 1];
+    versionOf(identifier: Identifier): string {
+        if (!identifier.versionMatchingGroup)
+            throw 'This platform doesn\'t specify any version in the user-agent information.';
+
+        let matches = identifier.matchingExpression.exec(this.ua);
+        if (identifier.versionMatchingGroup < 0 ||
+            identifier.versionMatchingGroup >= matches.length)
+            return '';
+
+        return matches[identifier.versionMatchingGroup];
     }
 
-    private checkByHierarchy(collection: Object, identifier: RegExp): boolean {
+    private checkByHierarchy(collection: Collection<Identifier>, identifier: Identifier): boolean {
         for (let c of Object.keys(collection)) {
-            let regex = collection[c] as RegExp;
-
-            if (regex.test(this.ua)) {
+            let collectionIdentifier = collection[c] as Identifier;
+            if (collectionIdentifier.matchingExpression.test(this.ua)) {
                 return collection[c] === identifier;
             }
 
@@ -65,12 +97,12 @@ export class Platform {
         return false;
     }
 
-    private assertValidCollection(collection: Object): void {
+    private assertValidCollection(collection: Collection<Identifier>): void {
         if (!collection)
             throw 'The platform identifier to test is not valid.';
     }
 
-    private getSourceCollection(identifier: RegExp): Object {
+    private getSourceCollection(identifier: Identifier): Collection<Identifier> {
         for (let collection of [Browser, Device, Engine, OS]) {
             for (let c in collection) {
                 if (collection[c] === identifier) {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform, Browser } from 'ngx-platform-identifier';
+import { Platform } from 'ngx-platform-identifier';
 
 @Component({
   selector: 'integration-app',
@@ -7,9 +7,13 @@ import { Platform, Browser } from 'ngx-platform-identifier';
 })
 export class AppComponent {
 
-  isChromePlatform: boolean = false;
+  browser: string;
+  engine: string;
+  os: string;
 
   constructor(platform: Platform) {
-    this.isChromePlatform = platform.is(Browser.CHROME);
+    this.browser = platform.browser.toString();
+    this.engine = platform.engine.toString();
+    this.os = platform.os.toString();
   }
 }

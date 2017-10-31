@@ -2,11 +2,12 @@ import { TestBed, async, inject } from '@angular/core/testing';
 
 import { NAVIGATOR_UA } from '../config';
 import { Browser } from '../constants/browser';
+import { Identifier } from '../interfaces/identifier';
 import { Platform } from './platform.service';
 
 describe('Platform', () => {
 
-    let testIsFn = (identifier: RegExp, ua: string, expectation = true) => {
+    let testIsFn = (identifier: Identifier, ua: string, expectation = true) => {
         it('#is should return ' + expectation.toString() + ' for the user-agent "' + ua + '"', () => {
             let service = new Platform(ua);
             expect(service.is(identifier)).toBe(expectation, ua);

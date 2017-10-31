@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-describe('QuickStart Lib E2E Tests', function () {
+describe('ngx-platform-identifier E2E Tests', function () {
 
   beforeEach(() => browser.get(''));
 
@@ -10,8 +10,16 @@ describe('QuickStart Lib E2E Tests', function () {
     });
   });
 
-  it('should display platform detection', () => {
-    expect(element(by.css('h3')).getText()).toEqual(['Is running chrome? true', 'Is running chrome? false']);
+  it('should display the browser platform', () => {
+    expect(element(by.css('.browser')).getText()).toBeDefined();
+  });
+
+  it('should display the engine platform', () => {
+    expect(element(by.css('.engine')).getText()).toBeDefined();
+  });
+
+  it('should display the OS platform', () => {
+    expect(element(by.css('.os')).getText()).toBeDefined();
   });
 
 });
