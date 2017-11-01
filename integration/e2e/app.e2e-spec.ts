@@ -11,15 +11,15 @@ describe('ngx-platform-identifier E2E Tests', function () {
   });
 
   it('should display the browser platform', () => {
-    expect(element(by.css('.browser')).getText()).toBeDefined();
+    expect(element(by.css('.browser')).getText()).toMatch(/[\d\.]+$/);
   });
 
   it('should display the engine platform', () => {
-    expect(element(by.css('.engine')).getText()).toBeDefined();
+    expect(element(by.css('.engine')).getText()).toMatch(/[\d\.]+$/);
   });
 
   it('should display the OS platform', () => {
-    expect(element(by.css('.os')).getText()).toBeDefined();
+    expect(element(by.css('.os')).getText()).toMatch(/[\d\.]+$/);
   });
 
 });
