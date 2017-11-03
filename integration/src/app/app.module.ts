@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { PlatformIdentifierModule } from 'ngx-platform-identifier';
+import { PlatformIdentifierModule } from '@lngx/platform-identifier';
 
 import { AppComponent } from './app.component';
 

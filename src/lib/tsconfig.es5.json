@@ -14,8 +14,8 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "ngx-platform-identifier.js",
-    "flatModuleId": "ngx-platform-identifier",
+    "flatModuleOutFile": "platform-identifier.js",
+    "flatModuleId": "@lngx/platform-identifier",
     "genDir": "../../out-tsc/lib-gen-dir/"
   }
 }

@@ -1,16 +1,17 @@
 {
-  "name": "ngx-platform-identifier",
+  "name": "@lngx/platform-identifier",
   "version": "0.9.1",
   "description": "Angular 4+ library to get information about the running platform (engine, browser and OS, currently).",
   "author": "Luan Mattner Müller",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luanmm/ngx-platform-identifier.git"
+    "url": "git+https://github.com/lngx/platform-identifier.git"
   },
   "keywords": [
     "angular2",
     "angular4",
+    "angular5",
     "typescript",
     "user agent",
     "information",
@@ -20,10 +21,10 @@
     "device",
     "platform"
   ],
-  "main": "./bundles/ngx-platform-identifier.umd.js",
-  "module": "./ngx-platform-identifier.es5.js",
-  "es2015": "./ngx-platform-identifier.js",
-  "typings": "./ngx-platform-identifier.d.ts",
+  "main": "./bundles/platform-identifier.umd.js",
+  "module": "./platform-identifier.es5.js",
+  "es2015": "./platform-identifier.js",
+  "typings": "./platform-identifier.d.ts",
   "scripts": {
     "clean": "rimraf out-tsc dist/*",
     "prebuild": "npm run clean",

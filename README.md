@@ -1,6 +1,4 @@
-![Build status](https://travis-ci.org/luanmm/ngx-platform-identifier.svg?branch=master)
-
-## ___This library is still under development and its use is not recommended yet.___
+[![Build Status](https://travis-ci.org/lngx/platform-identifier.svg?branch=master)](https://travis-ci.org/lngx/platform-identifier)
 
 ## Use
 
@@ -9,13 +7,13 @@
 To install this library into your Angular project, just run the following command:
 
 ```
-npm install ngx-platform-identifier --save
+npm install @lngx/platform-identifier --save
 ```
 
 ...and don't forget to import the library module into your Angular application module:
 
 ```typescript
-import { PlatformIdentifierModule } from 'ngx-platform-identifier';
+import { PlatformIdentifierModule } from '@lngx/platform-identifier';
 
 @NgModule({
     imports: [
@@ -30,7 +28,7 @@ export class SampleModule { }
 The library provides two simple methods to check the platform, as the example shows:
 
 ```typescript
-import { Platform, Browser } from 'ngx-platform-identifier';
+import { Platform, Browser } from '@lngx/platform-identifier';
 
 export class SampleComponent {
 

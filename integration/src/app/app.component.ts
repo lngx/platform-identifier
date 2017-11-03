@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ngx-platform-identifier';
+import { Platform } from '@lngx/platform-identifier';
 
 @Component({
   selector: 'integration-app',

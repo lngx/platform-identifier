@@ -39,7 +39,7 @@
       rxjs: {
         defaultExtension: 'js'
       },
-      'ngx-platform-identifier': {
+      '@lngx/platform-identifier': {
         main: 'index.js',
         defaultExtension: 'js',
         meta: {

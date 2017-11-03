@@ -3,7 +3,7 @@
     "baseDir": "src/demo",
     "routes": {
       "/node_modules": "node_modules",
-      "/ngx-platform-identifier": "src/lib"
+      "/@lngx/platform-identifier": "src/lib"
     }
   }
 }

@@ -13,7 +13,10 @@ const commonjs = require('rollup-plugin-commonjs');
 
 const inlineResources = require('./inline-resources');
 
-const libName = require('./package.json').name;
+const libNameWithScope = require('./package.json').name;
+const libScopeIndex = libNameWithScope.indexOf('/');
+const libName = libScopeIndex > 0 ? libNameWithScope.slice(libScopeIndex + 1) : libNameWithScope;
+
 const rootFolder = path.join(__dirname);
 const compilationFolder = path.join(rootFolder, 'out-tsc');
 const srcFolder = path.join(rootFolder, 'src/lib');

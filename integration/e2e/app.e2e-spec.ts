@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-describe('ngx-platform-identifier E2E Tests', function () {
+describe('@lngx/platform-identifier E2E Tests', function () {
 
   beforeEach(() => browser.get(''));
 
