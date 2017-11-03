@@ -21,8 +21,6 @@ export class Platform {
         return this._browser;
     }
 
-    private _browser: PlatformInfo = null;
-
     /* TODO: Make the devices list by user-agent first
     get device(): PlatformInfo {
         if (this._device === null)
@@ -30,8 +28,6 @@ export class Platform {
 
         return this._device;
     }
-
-    private _device: PlatformInfo = null;
     */
 
     get engine(): PlatformInfo {
@@ -41,8 +37,6 @@ export class Platform {
         return this._engine;
     }
 
-    private _engine: PlatformInfo = null;
-
     get os(): PlatformInfo {
         if (this._os === null)
             this._os = PlatformInfo.from(OS, this.ua);
@@ -50,10 +44,13 @@ export class Platform {
         return this._os;
     }
 
-    private _os: PlatformInfo = null;
+    /** @private */ _browser: PlatformInfo = null;
+    /** @private */ //_device: PlatformInfo = null;
+    /** @private */ _engine: PlatformInfo = null;
+    /** @private */ _os: PlatformInfo = null;
 
     constructor(
-        @Inject(NAVIGATOR_UA) private ua = window.navigator.userAgent
+        @Inject(NAVIGATOR_UA) /** @private */ public ua = window.navigator.userAgent
     ) { }
 
     is(identifier: Identifier): boolean {

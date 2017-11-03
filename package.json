@@ -1,6 +1,6 @@
 {
   "name": "ngx-platform-identifier",
-  "version": "0.8.3",
+  "version": "0.9.1",
   "description": "Angular 4+ library to get information about the running platform (engine, browser and OS, currently).",
   "author": "Luan Mattner Müller",
   "license": "MIT",
@@ -52,7 +52,7 @@
     "npm": ">= 3.0.0"
   },
   "peerDependencies": {
-    "@angular/core": ">=4.0.0 <5.0.0 || >=4.0.0-beta <5.0.0"
+    "@angular/core": ">=4.0.0 <6.0.0 || >=4.0.0-beta <6.0.0"
   },
   "devDependencies": {
     "@angular/common": "~4.1.3",

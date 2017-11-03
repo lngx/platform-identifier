@@ -162,6 +162,11 @@ describe('Platform', () => {
             TestBed.configureTestingModule({ providers: [Platform, { provide: NAVIGATOR_UA, useValue: window.navigator.userAgent }] });
         }));
 
+        it('test should have a value for the user-agent string',
+            async(inject([Platform], (service: Platform) => {
+                expect(service.ua).toBeDefined();
+            })));
+
         it('test should return a value for Platform.is',
             async(inject([Platform], (service: Platform) => {
                 expect(service.is(Browser.CHROME)).toBeDefined();

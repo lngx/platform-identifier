@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 
 import { NAVIGATOR_UA } from './config';
-
-import { Browser } from './constants/browser';
 import { Platform } from './services/platform.service';
+
+export const defaultUserAgent = window.navigator.userAgent;
 
 @NgModule({
   providers: [
-    { provide: NAVIGATOR_UA, useValue: window.navigator.userAgent },
+    { provide: NAVIGATOR_UA, useValue: defaultUserAgent },
     Platform
   ]
 })
