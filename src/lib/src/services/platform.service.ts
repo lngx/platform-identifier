@@ -15,32 +15,32 @@ import { Collection } from '../interfaces/collection';
 export class Platform {
 
     get browser(): PlatformInfo {
-        if (this._browser === null)
+        if (this._browser === null) {
             this._browser = PlatformInfo.from(Browser, this.ua);
-
+        }
         return this._browser;
     }
 
     /* TODO: Make the devices list by user-agent first
     get device(): PlatformInfo {
-        if (this._device === null)
+        if (this._device === null) {
             this._device = PlatformInfo.from(Device, this.ua);
-
+        }
         return this._device;
     }
     */
 
     get engine(): PlatformInfo {
-        if (this._engine === null)
+        if (this._engine === null) {
             this._engine = PlatformInfo.from(Engine, this.ua);
-
+        }
         return this._engine;
     }
 
     get os(): PlatformInfo {
-        if (this._os === null)
+        if (this._os === null) {
             this._os = PlatformInfo.from(OS, this.ua);
-
+        }
         return this._os;
     }
 
@@ -68,13 +68,15 @@ export class Platform {
     }
 
     versionOf(identifier: Identifier): string {
-        if (!identifier.versionMatchingGroup)
+        if (!identifier.versionMatchingGroup) {
             throw 'This platform doesn\'t specify any version in the user-agent information.';
+        }
 
         let matches = identifier.matchingExpression.exec(this.ua);
         if (identifier.versionMatchingGroup < 0 ||
-            identifier.versionMatchingGroup >= matches.length)
+            identifier.versionMatchingGroup >= matches.length) {
             return '';
+        }
 
         return matches[identifier.versionMatchingGroup];
     }
@@ -95,8 +97,9 @@ export class Platform {
     }
 
     private assertValidCollection(collection: Collection<Identifier>): void {
-        if (!collection)
+        if (!collection) {
             throw 'The platform identifier to test is not valid.';
+        }
     }
 
     private getSourceCollection(identifier: Identifier): Collection<Identifier> {
